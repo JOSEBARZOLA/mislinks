@@ -15,7 +15,7 @@ if (err.code === 'ER_CON_COUNT_ERROR'){
 if (err.code === 'ECONNREFUSED'){
     console.error('DATABASE CONNECTION WAS REFUSED')
 }
-}
+} 
 
 if (Connection) Connection.release();
 console.log('DB is Connected');

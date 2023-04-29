@@ -4,4 +4,4 @@ database: {
     user: 'root',
     database: 'my_links'
 }
-}
+} 

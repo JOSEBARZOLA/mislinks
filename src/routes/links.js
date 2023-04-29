@@ -22,4 +22,4 @@ const links = await pool.query('SELECT * FROM links');
 res.render('links/list', {links});
 });
 
-module.exports = router;
+module.exports = router;  
