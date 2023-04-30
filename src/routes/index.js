@@ -6,4 +6,4 @@ res.send('mi app con plantillas');
 
 })
 
-module.exports = router; 
+module.exports = router;  

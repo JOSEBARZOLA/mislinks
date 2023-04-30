@@ -5,6 +5,7 @@ const path = require('path');
 const {helpers} = require('handlebars');
 const bp = require('body-parser');
 
+
 //inicializacion
 const app = express();
  
@@ -24,6 +25,8 @@ app.set('view engine', '.hbs');
 
 
 //peticiones
+
+
 app.use(morgan('dev'));
 app.get(express.urlencoded({extended: false}));
 app.use(express.json());
