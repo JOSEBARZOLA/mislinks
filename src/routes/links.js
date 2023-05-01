@@ -14,7 +14,7 @@ url,
 description
 };
 await pool.query('INSERT INTO links set?', [newLink]);
-
+req.flash('success', 'link agregado');
 res.redirect('/links');
 });
 

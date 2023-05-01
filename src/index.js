@@ -5,10 +5,13 @@ const path = require('path');
 const {helpers} = require('handlebars');
 const bp = require('body-parser');
 
-
+const flash = require('connect-flash');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+const { database } = require('./keys');
 //inicializacion
 const app = express();
- 
+
 
 //configuracion
 app.set('port', process.env.PORT || 4000);
@@ -24,9 +27,15 @@ app.engine('.hbs',  engine({
 app.set('view engine', '.hbs');
 
 
-//peticiones
+//middlewares
 
-
+app.use(session({
+    secret: "changeit",
+    resave: false,
+    saveUninitialized: false,
+    store: new MySQLStore( database )
+}));
+app.use(flash());
 app.use(morgan('dev'));
 app.get(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -34,8 +43,10 @@ app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
 
+
 //variables G.
 app.use((req, res, next) => {
+  app.locals.success =  req.flash('success');
 next();
 });
 
