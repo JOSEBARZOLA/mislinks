@@ -1,1 +1,26 @@
- 
+ *{
+    font-family: Oswald;
+ }
+ .nav-link{
+   color:white; 
+   font-size: 20px;
+
+}
+
+ .navbar-brand{
+    color:white; 
+    font-size: 25px;
+ }
+
+
+ .navbar-nav{
+margin-left: auto;
+ }
+
+ .navbar-toggler{
+    color:white; 
+ }
+
+#hamburger{
+    color:white; 
+}
