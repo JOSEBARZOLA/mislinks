@@ -3,22 +3,21 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3>Sign Up</h3>
+                    <h3>Sign In</h3>
                 </div>
                 <div class="card-body">
-                    <form action="/signup" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="fullname" placeholder="fullname" class="form-control" autofocus>
+                    <div id="imagen" class="container"><img id="imagen" src="/img/usuario.png" alt="logo" class="card-img-top mx-auto m-2 rounded-circle w-50">
                     </div>
-                    <div class="form-group">
+                    <form action="/signin" method="POST">
+                    <div class="form-group m-4">
                         <input type="text" name="username" placeholder="username" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-4">
                         <input type="password" name="password" class="form-control" placeholder="password">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success btn-block">
-                            SignUp
+                            Sign In
                         </button>
                     </div>
                     </form>

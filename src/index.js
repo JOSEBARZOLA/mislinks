@@ -9,8 +9,13 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const { database } = require('./keys');
+
+const passport = require('passport');
+
+
 //inicializacion
 const app = express();
+require('./lib/passport');
 
 
 //configuracion
@@ -42,11 +47,13 @@ app.use(express.json());
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 //variables G.
 app.use((req, res, next) => {
   app.locals.success =  req.flash('success');
+  app.locals.message =  req.flash('message');
 next();
 });
 
