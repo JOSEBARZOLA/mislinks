@@ -22,6 +22,18 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 
+.masthead h1{
+   font-size: 4rem;
+   margin: 0;
+   padding: 0;
+}
+@media (min-widht: 992px){
+   .masthead h1{
+      font-size: 5.5rem;
+
+   }
+}
+
  .nav-link{
    color:white; 
    font-size: 20px;

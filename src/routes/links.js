@@ -13,17 +13,19 @@ router.post('/add',  async (req, res) =>{
 const newLink ={
 title,
 url,
-description
-};
+description,
+
+}; //agregar user_id: req.user.id abajo de description
 await pool.query('INSERT INTO links set?', [newLink]);
 req.flash('success', 'Enlace agregado');
 res.redirect('/links');
 });
 
 
+// en la siguiente linea cambiar por const links = await pool.query('SELECT * FROM links WHERE user_id = ?', [req.user.id]);
 
 router.get('/', isLoggedIn, async (req, res) => {
-const links = await pool.query('SELECT * FROM links');
+    const links = await pool.query('SELECT * FROM links');
 res.render('links/list', {links});
 });
 
