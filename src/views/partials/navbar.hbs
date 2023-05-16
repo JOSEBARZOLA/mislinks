@@ -2,19 +2,19 @@
   <div class="container">
     <a href="/" class="navbar-brand">Mis Enlaces</a>
     <button id="hamburger" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span id="hamburger" class="navbar-toggler-icon"></span>
+      <span id="hamburger" ><i class="fa-solid fa-bars" style="color: #ffffff;"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ">
         {{#if user}}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            My Links
+            Enlaces
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/links">all links</a></li>
+            <li><a class="dropdown-item" href="/links">Todos los enlaces</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/links/add">Add links</a></li>
+            <li><a class="dropdown-item" href="/links/add">Agrega un enlace</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -25,10 +25,10 @@
         </li>
         {{else}}
         <li class="nav-item">
-          <a class="nav-link" href="/signin">Sign In</a>
+          <a class="nav-link" href="/signin">Ingresa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/signup">Sign Up</a>
+          <a class="nav-link" href="/signup">Registrate</a>
         </li>
         {{/if}}
         

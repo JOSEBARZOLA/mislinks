@@ -2,7 +2,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const pool = require('../database');
 const helpers = require('./helpers')
-
+const flash = require('connect-flash');
 
 passport.use ('local.signin', new LocalStrategy({
     usernameField: 'username',
@@ -15,7 +15,7 @@ if(rows.length > 0 ){
     const user = rows[0];
     const validPassword = await helpers.CompararPassword(password, user.password);
 if(validPassword) {
-done(null, user, req.flash('success', 'Bienvenido' + user.username));
+done(null, user, req.flash('success', 'Bienvenido' + user.fullname));
 } else{
     done(null, false, req.flash('message', 'contraseña incorrecta'));
 }
@@ -39,7 +39,7 @@ passport.use('local.signup', new LocalStrategy({
     const newUser = {
     username,
     password,
-fullname
+    fullname
 };
 newUser.password = await helpers.encryptPassword(password);
 const resultado = await pool.query('INSERT INTO users SET ?', [newUser]);

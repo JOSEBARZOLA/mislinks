@@ -25,7 +25,7 @@ res.redirect('/links');
 // en la siguiente linea cambiar por const links = await pool.query('SELECT * FROM links WHERE user_id = ?', [req.user.id]);
 
 router.get('/', isLoggedIn, async (req, res) => {
-    const links = await pool.query('SELECT * FROM links');
+    const links = await pool.query('SELECT * FROM links', [req.user.id]);
 res.render('links/list', {links});
 });
 
