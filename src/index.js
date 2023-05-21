@@ -11,9 +11,6 @@ const { database } = require('./keys');
 const passport = require('passport');
 
 
-import ('./config.mjs');
-
-
 
 //inicializacion
 const app = express();
