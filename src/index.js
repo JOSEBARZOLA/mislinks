@@ -4,19 +4,20 @@ const  {engine} = require('express-handlebars');
 const path = require('path');
 const {helpers} = require('handlebars');
 const bp = require('body-parser');
-
 const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const { database } = require('./keys');
-
 const passport = require('passport');
+
+
+import ('./config.mjs');
+
 
 
 //inicializacion
 const app = express();
 require('./lib/passport');
-
 
 //configuracion
 app.set('port', process.env.PORT || 4000);

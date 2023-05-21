@@ -15,6 +15,7 @@ title,
 url,
 description,
 
+
 }; //agregar user_id: req.user.id abajo de description
 await pool.query('INSERT INTO links set?', [newLink]);
 req.flash('success', 'Enlace agregado');
